@@ -1,0 +1,17 @@
+Contains the answers to Question 2 of the Fall 2022 Data Science Intern Challenge
+
+a) How many orders were shipped by Speedy Express in total?
+-> SQL Query: SELECT COUNT(*) FROM Orders WHERE ShipperID=(SELECT ShipperID FROM Shippers WHERE ShipperName='Speedy Express');
+   Answer: 54
+
+
+b) What is the last name of the employee with the most orders?
+
+-> SQL Query: SELECT LastName FROM Employees WHERE EmployeeID IN (SELECT EmployeeID FROM Orders GROUP BY EmployeeID ORDER BY COUNT(*) DESC LIMIT 1);
+    Answer: Peacock
+
+
+c) What product was ordered the most by customers in Germany? The tables we have are Customers, Orders, OrderDetaislls:
+
+-> SQL Query: SELECT ProductName FROM Products WHERE ProductID IN (SELECT ProductID FROM OrderDetails WHERE OrderID IN (SELECT OrderID FROM Orders WHERE CustomerID IN (SELECT CustomerID FROM Customers WHERE Country='Germany')) GROUP BY ProductID ORDER BY COUNT(*) DESC LIMIT 1);
+   Answer: Gorgonzola Telino
