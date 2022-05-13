@@ -8,7 +8,7 @@ a) How many orders were shipped by Speedy Express in total?
 b) What is the last name of the employee with the most orders?
 
 -> SQL Query: SELECT LastName FROM Employees WHERE EmployeeID IN (SELECT EmployeeID FROM Orders GROUP BY EmployeeID ORDER BY COUNT(*) DESC LIMIT 1);
-    Answer: Peacock
+   Answer: Peacock
 
 
 c) What product was ordered the most by customers in Germany? The tables we have are Customers, Orders, OrderDetaislls:
