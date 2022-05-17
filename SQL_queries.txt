@@ -1,6 +1,9 @@
 Contains the answers to Question 2 of the Fall 2022 Data Science Intern Challenge
 
+
+
 a) How many orders were shipped by Speedy Express in total?
+
 -> SQL Query: SELECT COUNT(*) FROM Orders WHERE ShipperID=(SELECT ShipperID FROM Shippers WHERE ShipperName='Speedy Express');
    Answer: 54
 
